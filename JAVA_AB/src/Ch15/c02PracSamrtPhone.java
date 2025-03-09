@@ -1,4 +1,4 @@
-package CH15;
+package Ch15;
 
 // 부모 클래스 : SmartPhone
 class SmartPhone {
@@ -40,7 +40,7 @@ class SmartPhoneWithCamera extends SmartPhone {
 //printDtails()	: 스마트폰의 속성 정보 출력
 	
 	public void printDetails() {
-		System.out.println()
+		System.out.println();
 	}
 
 public class c02PracSamrtPhone {

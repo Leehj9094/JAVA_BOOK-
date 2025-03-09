@@ -11,7 +11,7 @@ public class c03CarMain {
 		System.out.println("Brand : " + brand);
 		System.out.println("model : " + model);
 		System.out.println("year : " + year);
-		System.out.println("price : " + price);
+		System.out.println("price : $" + price);
 	}
 	
 	

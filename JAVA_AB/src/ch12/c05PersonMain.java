@@ -32,7 +32,7 @@ public class c05PersonMain {
 	// 매개변수 생성자(constructor)
 	public c05PersonMain(String name, int age) {
 		System.out.println("매개변수 생성자입니다!");
-		this.name = name;
+		this.name = name;				// 객체의 위치 정보를 가져오는데 사용됨
 		this.age = age;
 	}
 	public void greet() {

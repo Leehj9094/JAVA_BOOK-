@@ -15,10 +15,7 @@ package ch14;
 		public int sell(int money) {
 		//	saveMoney += money;
 			
-		}
-
-	
-		
+		}	
 	}
 	
 	class Buyer {
@@ -57,7 +54,6 @@ public class co03AppleMain {
 	
 	System.out.println(cat);					// 보유금액, 사과개수 출력	// 12000, 98, 1000
 	System.out.println(dog);					// 보유금액, 사과개수 출력	// 3000, 2
-	
-	
+		
 	}
 }

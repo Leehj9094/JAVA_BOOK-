@@ -7,19 +7,42 @@ class PracticeOE {
 		// 짝/홀수의 합을 누적해줄 누적합 변수
 		int oddSum = 0;
 		int evenSum = 0;
-		// 만약 x가 짝수하면 = 짝수의 합
-		// 만약 
+		// 만약 x가 짝수라면 = 짝수의 합
+		// 만약 x가 홀수라면 = 홀수의 합
 		
-		System.out.println("짝수의 합 : ");
-		System.out.println("홀수의 합 : ");
+		if(x % 2 == 0) {
+			evenSum += x;
+		} else {
+			oddSum += x;
+		}
+		if(y % 2 == 0) {
+			evenSum += y;
+		} else {
+			oddSum += y;
+		}
+		if(z % 2 == 0) {
+			evenSum += z;
+		} else {
+			oddSum += z;
+		}
+		if(w % 2 == 0) {
+			evenSum += w;
+		} else {
+			oddSum += w;
+		}
 		
-		
-		
-		
+		System.out.println("짝수의 합 : " + evenSum);
+		System.out.println("홀수의 합 : " + oddSum);
+			
 		return x + y + z + w;
 	}
 }
-
+// OverLoading
+// public void sum(){
+//	int x = sc.nextInt();
+//	int y = sc.nextInt();
+// System.out.println(x + y);
+// }
 
 public class c08PracOddEven {
 	public static void main(String[] args) {
@@ -31,7 +54,7 @@ public class c08PracOddEven {
 		System.out.println("result = " + result);
 	}
 	// 실행 예)
-	// 짝수의 합 : 32
+	// 짝수의 합 : 32 
 	// 홀수의 합 : 132
 	// result = 162
 

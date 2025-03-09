@@ -29,6 +29,10 @@ class c03Simple {
 		this.x = x;
 		this.y = y;
 	}
+	@Override
+	public String toString() {
+		return "c03Simple [x=" + x + ", y=" + y + "]";
+	}
 	
 }
 public class c03This {
@@ -40,6 +44,4 @@ public class c03This {
 		System.out.println(ob2);
 		System.out.println(ob3);
 	}
-	
-
 }

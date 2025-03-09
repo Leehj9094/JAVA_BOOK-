@@ -1,4 +1,4 @@
-package CH15;
+package Ch15;
 
 //### 상속 In
 

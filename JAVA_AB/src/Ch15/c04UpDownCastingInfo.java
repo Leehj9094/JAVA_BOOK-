@@ -1,4 +1,4 @@
-package CH15;
+package Ch15;
 
 class Exam {
 	int num1;
