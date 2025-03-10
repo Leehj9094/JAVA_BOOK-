@@ -29,21 +29,19 @@ package Ch20;
 			this.name =name;
 		}
 		
-		@Override
-		public String toString() {
-			return "Animal [name=" + name + "]";
-		}
 	}
 	
 public class C01Object {
+	private static Object newObject;
+
 	public static void main(String[] args) {
 //		1. toString()
 		Animal test = new Animal("동물 이름");
 		System.out.println(test);
 		System.out.println(test.toString());
 		
-		Object test1 = newObject;
-		Object test2 = newObject;
+		Object test1 = new Object();
+		Object test2 = new Object();
 		Object test3 = test1;
 		
 		System.out.println(test1.equals(test3));

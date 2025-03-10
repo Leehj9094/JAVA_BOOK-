@@ -1,7 +1,9 @@
 package Ch20;
 
 import java.util.HashMap;
-import java.util.
+import java.util.Lsit;
+import java.util.ArrayList;
+import java.util.Map;
 // ### API Class ###
 
 // 1. API 정의 : "Application Programming Interface"의 약자
@@ -23,17 +25,34 @@ import java.util.
 // 4. java.net 패키지 : 네트워크 프로그래밍을 위한 클래스들
 // 5. javax.swing 패키지 : GUI(그래픽 사용자 인터페이스)를 개발하기 위한 클래스들
 
- 2-1. Object 클래스:
-	 
- 패키지 : java.lang
- 모든 자바 클래스의 최상위 부모 클래스로, java.lang 패키지에 속해 있음
- 
- 2-2.
+// 2-1. Object 클래스:
+//	 
+// 패키지 : java.lang
+// 모든 자바 클래스의 최상위 부모 클래스로, java.lang 패키지에 속해 있음
+// 
+// 2-2. Wrapper 클래스 (예 : Integer, Double, Boolean 등)
+
+// 패키지 : java.lang
+// Wrapper 클래스들은 기본적으로 java.lang 패키지에 속해 있음
+// 따라서 추가적인 import 문 없이 사용할 수 있음
+
+// 2-3. 문자열 클래스 (String 클래스) : 
+// 패키지 : java.lang
+// 마찬가지로 java.lang 패키지에 속해 있음
+// 따라서 추가적인 import문 없이 사용할 수 있음
+
+// 2-4. Random 클래스
+// 패키지 : java.util
+// Random 클래스는 난수 생성과 관련된 기능을 제공하며, java.util 패키지에 속해 있음
+// 따라서 import java.util.Random; 문을 통해 사용할 수 있음
+// 일반적으로 java.lang 패키지에 속한 클래스들은 추가적인 import 없이 사용할 수 있음
+// 그 외의 클래스들은 필요에 따라 import문을 사용하여 해당 패키지를 명시해주어야 함.
+
 public class ch20 {
 	
 	public static void main(String[] args) {
-		int age = 22;
-		Map <String, object>
+//		int age = 22;
+//		Map <String, object>;
 	}
 
 }
