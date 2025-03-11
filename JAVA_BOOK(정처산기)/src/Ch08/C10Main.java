@@ -25,12 +25,17 @@ class Buyer{
 	public String toString() {
 		return "Buyer [myMoney=" + myMoney + ", appleCnt=" + appleCnt + "]";
 	}
-	public int Payment(Seller seller, int money) {
+	public void Payment(Seller seller, int money) {
 		// 내 보유금엑에서 차감
 		// seller에 money를 전달하고 리턴되는 사과 개수를 누적
-		myMoney -= myMoney;
-		appleCnt +=seller.appleCnt(money);
-		return appleCnt;
+//		myMoney -= myMoney;
+//		appleCnt +=seller.appleCnt(money);
+//		return appleCnt;
+		
+		this.myMoney -= money;
+		int appleCnt = seller.receive(money);
+		this.appleCnt+=appleCnt;
+		
 	}
 }
 class Seller{
@@ -56,11 +61,15 @@ class Seller{
 	public int receive(int money) {
 		// 구매자로부터 전달받은 money를 내 보유금액에 누적
 		// 전달받은 금액 / 사과개수 를 리턴
-		myMoney += money;
-		int cnt = money / price;
-		appleCnt -= appleCnt(money);	
+//		myMoney += money;
+//		int cnt = money / price;
+//		appleCnt -= appleCnt(money);	
 	
-		return -1;
+		this.myMoney+=money;
+		int cnt = money / this.price;
+		this.appleCnt-=cnt;
+		
+		return cnt;
 	}
 }
 
