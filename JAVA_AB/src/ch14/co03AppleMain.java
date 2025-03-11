@@ -13,6 +13,7 @@ package ch14;
 			this.price = price;
 		}
 		public int sell(int money) {
+			return money;
 		//	saveMoney += money;
 			
 		}	

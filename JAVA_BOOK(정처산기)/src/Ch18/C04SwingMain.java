@@ -25,18 +25,18 @@ class C04GUI extends JFrame{			// 객체만 만들면 됨
 		
 		//Component
 		JButton btn1 = new JButton("BTN01");
-		btn1.setBounds(10,10,100,30);
+		btn1.setBounds(20,10,100,30);
 		
 		JButton btn2 = new JButton("BTN02");
-		btn2.setBounds(120,10,100,30);
+		btn2.setBounds(140,10,100,30);
 		
 		JTextField txt1 = new JTextField();
-		txt1.setBounds(10,50,210,30);
+		txt1.setBounds(20,50,210,30);
 		
 		JTextArea area1 = new JTextArea();
 //		area1.setBounds(10,90,210,350);
-		JScrollPane scroll1 = new JScrollPane();
-		scroll1.setBounds(10,90,210,350);
+		JScrollPane scroll1 = new JScrollPane(area1);
+		scroll1.setBounds(20,90,210,350);
 		
 		//panel(Component)
 		panel.add(btn1);
