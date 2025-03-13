@@ -1,5 +1,7 @@
 package Ch16;
 
+import java.util.Scanner;
+
 public class C02PracStudent {
 
 	public static void main(String[] args) {
@@ -18,6 +20,18 @@ public class C02PracStudent {
 		// 3번째 학생 국어 점수 : 86
 		// 4번째 학생 국어 점수 : 74
 		// 5번째 학생 국어 점수 : 95
+		
+		Scanner sc = new Scanner(System.in);
+		int [] score_arr = new int[5];
+		
+		for(int i = 0; i < 5; i++) {
+			System.out.println((i+1) + "번째 학생의 국어 점수를 입력해 주세요");
+			//Scanner 입력이 필요
+			score_arr[1] = sc.nextInt();
+		}
+		for(int i = 0; i < score_arr.length; i++) {
+			System.out.println((i+1) + "번째 학생 국어 점수 : " + score_arr[i]);
+		}
 		
 	}
 	

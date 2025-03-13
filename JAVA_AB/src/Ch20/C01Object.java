@@ -28,11 +28,14 @@ package Ch20;
 		public Animal(String name) {
 			this.name =name;
 		}
-		
+
+		@Override
+		public String toString() {
+			return "Animal [name=" + name + "]";
+		}
 	}
 	
 public class C01Object {
-	private static Object newObject;
 
 	public static void main(String[] args) {
 //		1. toString()

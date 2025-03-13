@@ -1,4 +1,4 @@
-package Ch18;
+package Ch19;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -46,7 +46,7 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 		btn1 = new JButton("파일로 저장");
 		btn1.setBounds(320, 10, 140, 40);
 
-		btn2 = new JButton("1 : 1 요청");
+		btn2 = new JButton("1 : 1 요청"); 
 		btn2.setBounds(320, 60, 140, 40);
 
 		btn3 = new JButton("대화기록보기");
@@ -164,7 +164,7 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 	}
 }
 
-public class C07SwingEventMain {
+public class C08SwingEventMain {
 
 	public static void main(String[] args) {
 		new C07GUI("Chatting UI");

@@ -7,7 +7,7 @@ public class C02Reader {
 
 	public static void main(String[] args) {
 		
-		// 파일 경울 설정
+		// 파일 경로 설정
 		String filepath = "c:\\testFolder\\test.txt";
 		
 		try {

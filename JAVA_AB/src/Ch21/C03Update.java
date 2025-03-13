@@ -40,8 +40,20 @@ public class C03Update {
 			// 주소 데이터 수정
 			pstmt = conn.prepareStatement("UPDATE `testdb`.`tbl_customer` SET `address` = ? WHERE `idx` = ?");
 			
-		}catch() {
+			pstmt.setString(1,"대구 대명동 102-22");
+			pstmt.setInt(2, 1);
 			
+			int result = pstmt.executeUpdate();
+			if(result>0) {
+				System.out.println("UPDATE 성공");
+			} else {
+				System.out.println("UPDATE 실패");
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {conn.close();}catch(Exception e) {e.printStackTrace();}
 		}
 	}
 
