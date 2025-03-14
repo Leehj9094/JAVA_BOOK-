@@ -15,7 +15,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.text.BadLocationException;
 
-class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListener {
+class C08GUI extends JFrame implements ActionListener, KeyListener, MouseListener {
 	JButton btn1;
 	JButton btn2;
 	JButton btn3;
@@ -23,7 +23,7 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 	JTextField txt1;
 	JTextArea area1;
 
-	C07GUI(String title) {
+	C08GUI(String title) {
 
 		// frame
 		super(title);
@@ -167,6 +167,6 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 public class C08SwingEventMain {
 
 	public static void main(String[] args) {
-		new C07GUI("Chatting UI");
+		new C08GUI("Chatting UI");
 	}
 }

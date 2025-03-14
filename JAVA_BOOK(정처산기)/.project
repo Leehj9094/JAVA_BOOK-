@@ -14,4 +14,36 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/Ch19/jackson-annotations-2.18.3.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Users/Administrator/Downloads/jackson-annotations-2.18.3.jar</locationURI>
+		</link>
+		<link>
+			<name>src/Ch19/jackson-core-2.18.3.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Users/Administrator/Downloads/jackson-core-2.18.3.jar</locationURI>
+		</link>
+		<link>
+			<name>src/Ch19/jackson-databind-2.18.3.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Users/Administrator/Downloads/jackson-databind-2.18.3.jar</locationURI>
+		</link>
+		<link>
+			<name>src/Ch19/jsoup-1.19.1.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Users/Administrator/Downloads/jsoup-1.19.1.jar</locationURI>
+		</link>
+		<link>
+			<name>src/Ch19/selenium-server-4.29.0.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Users/Administrator/Downloads/selenium-server-4.29.0.jar</locationURI>
+		</link>
+		<link>
+			<name>src/Drivers/chromedriver.exe</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/chromedriver-win64/chromedriver.exe</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
