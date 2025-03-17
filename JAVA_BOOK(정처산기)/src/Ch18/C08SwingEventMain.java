@@ -12,27 +12,100 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.text.BadLocationException;
 
-class C08GUI extends JFrame implements ActionListener, KeyListener, MouseListener {
+class Memo {
+	private int id;
+	private String text;
+	private LocalDateTime createdAt;
+
+	// 디폴트 생성자
+	Memo() {
+	}
+
+	// 모든 인자 생성자
+	public Memo(int id, String text, LocalDateTime createdAt) {
+		super();
+		this.id = id;
+		this.text = text;
+		this.createdAt = createdAt;
+	}
+
+	// getter setter
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	// toString
+	@Override
+	public String toString() {
+		return "Memo [id=" + id + ", text=" + text + "]";
+	}
+
+}
+
+class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListener {
 	JButton btn1;
 	JButton btn2;
-	JButton btn3;
+	JButton btn3; // INSERT
+	JButton btn4; // UPDATE
+	JButton btn5; // DELETE
+	JButton btn6; // SELECTONE
+
 	JButton input;
 	JTextField txt1;
 	JTextArea area1;
 
 	Writer out;
 
-	C08GUI(String title) {
+	// DB CONN DATA
+	static String id = "root";
+	static String pw = "1234";
+	static String url = "jdbc:mysql://localhost:3306/testdb";
+
+	// JDBC참조변수
+	static Connection conn = null;
+	static PreparedStatement pstmt = null;
+	static ResultSet rs = null;
+
+	C07GUI(String title) throws ClassNotFoundException, SQLException {
 
 		// frame
 		super(title);
@@ -53,21 +126,33 @@ class C08GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 		txt1.setBounds(20, 300, 280, 50);
 
 		btn1 = new JButton("저장하기");
-		btn1.setBounds(320, 10, 140, 40);
+		btn1.setBounds(320, 10, 140, 35);
 
 		btn2 = new JButton("불러오기");
-		btn2.setBounds(320, 60, 140, 40);
+		btn2.setBounds(320, 50, 140, 35);
 
-		btn3 = new JButton("대화기록보기");
-		btn3.setBounds(320, 110, 140, 40);
+		btn3 = new JButton("INSERT");
+		btn3.setBounds(320, 90, 140, 35);
+
+		btn4 = new JButton("UPDATE");
+		btn4.setBounds(320, 130, 140, 35);
+
+		btn5 = new JButton("DELETE");
+		btn5.setBounds(320, 170, 140, 35);
+
+		btn6 = new JButton("SELECT");
+		btn6.setBounds(320, 210, 140, 35);
 
 		input = new JButton("입력");
-		input.setBounds(320, 305, 140, 40);
+		input.setBounds(320, 305, 140, 35);
 
 		// eventListener add
 		btn1.addActionListener(this);
 		btn2.addActionListener(this);
 		btn3.addActionListener(this);
+		btn4.addActionListener(this);
+		btn5.addActionListener(this);
+		btn6.addActionListener(this);
 		input.addActionListener(this);
 		txt1.addKeyListener(this);
 		area1.addMouseListener(this);
@@ -78,6 +163,9 @@ class C08GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 		panel.add(btn1);
 		panel.add(btn2);
 		panel.add(btn3);
+		panel.add(btn4);
+		panel.add(btn5);
+		panel.add(btn6);
 		panel.add(input);
 
 		// frame(panel)
@@ -85,6 +173,13 @@ class C08GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 
 		// frame
 		setVisible(true);
+
+		// DB CONN
+		// DB 연결코드
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		System.out.println("Driver Loading Success...");
+		conn = DriverManager.getConnection(url, id, pw);
+		System.out.println("DB CONNECTED...");
 	}
 
 	// button Event
@@ -164,7 +259,9 @@ class C08GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 					StringBuffer buffer = new StringBuffer();
 					while (true) {
 						int data = fin.read();
-						if (data == -1)break;}
+						if (data == -1)
+							break;
+					}
 					area1.setText("");
 					area1.append(buffer.toString());
 					fin.close();
@@ -174,9 +271,64 @@ class C08GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 			}
 
 		} else if (e.getSource() == btn3) {
-			System.out.println("대화기록보기");
-		} else if (e.getSource() == input) {
-			System.out.println("입력");
+			System.out.println("INSERT");
+			try {
+				pstmt = conn.prepareStatement("insert into tbl_memo values(?,?,new())");
+				pstmt.setString(1, area1.getText());
+				int result = pstmt.executeUpdate();
+
+				if (result > 0) {
+					System.out.println("[INFO] INSERT 성공");
+					JOptionPane.showConfirmDialog(null, "INSERT 성공", "INSERT 확인창", JOptionPane.INFORMATION_MESSAGE);
+				} else {
+					System.out.println("[ERROR] INSERT 실패");
+					JOptionPane.showConfirmDialog(null, "INSERT 실패", "INSERT 확인창", JOptionPane.ERROR_MESSAGE);
+				}
+			} catch (SQLException e1) {
+
+				e1.printStackTrace();
+			} finally {
+				try {
+					pstmt.close();
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+			}
+
+		} else if (e.getSource() == btn4) {
+			System.out.println("UPDATE");
+
+		} else if (e.getSource() == btn5) {
+			System.out.println("DELETE");
+
+		} else if (e.getSource() == btn6) {
+			// 전체 조회 가져와서 CONSOLE에 출력
+
+			try {
+				// SQL 준비
+				pstmt = conn.prepareStatement("select * from tbl_memo");
+
+				// SQL 실행
+				List<Memo> list = new ArrayList();
+				Memo memo;
+				rs = pstmt.executeQuery();
+				if (rs != null) {
+					while (rs.next()) {
+						System.out.print(rs.getInt("id") + " ");
+						System.out.print(rs.getString("text") + " ");
+						System.out.print(rs.getTime("createdAt") + "\n");
+					}
+				}
+			} catch (SQLException e1) {
+
+				e1.printStackTrace();
+			} finally {
+				try {
+					pstmt.close();
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+			}
 		}
 	}
 
@@ -252,7 +404,7 @@ class C08GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 
 public class C08SwingEventMain {
 
-	public static void main(String[] args) {
-		new C08GUI("Chatting UI");
+	public static void main(String[] args) throws Exception {
+		new C07GUI("Chatting UI");
 	}
 }

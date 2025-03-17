@@ -41,6 +41,11 @@
 			<locationURI>PARENT-2-PROJECT_LOC/Users/Administrator/Downloads/selenium-server-4.29.0.jar</locationURI>
 		</link>
 		<link>
+			<name>src/Ch21/mysql-connector-j-9.2.0.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0.jar</locationURI>
+		</link>
+		<link>
 			<name>src/Drivers/chromedriver.exe</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/chromedriver-win64/chromedriver.exe</locationURI>
