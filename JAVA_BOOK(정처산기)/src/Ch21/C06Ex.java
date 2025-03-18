@@ -144,12 +144,12 @@ public class C06Ex {
 		// 수정
 
 		pstmt = conn.prepareStatement("update charge_station set `행정구역`=?, `지사`=?, `시설명`=?,`우편번호`=? where `순번`=?");
-		pstmt.setString(2, obj.getSection()); // 행정구역
-		pstmt.setString(3, obj.getStation()); // 지사
-		pstmt.setString(3, obj.getName()); 	  // 시설명
-		pstmt.setString(5, obj.getZipcode()); // 우편번호
-		pstmt.setString(6, obj.getAddress()); // 주소
-		pstmt.setString(6, obj.getNo()); 	  // 순번
+//		pstmt.setString(2, obj.getSection()); // 행정구역
+//		pstmt.setString(3, obj.getStation()); // 지사
+//		pstmt.setString(3, obj.getName()); 	  // 시설명
+//		pstmt.setString(5, obj.getZipcode()); // 우편번호
+//		pstmt.setString(6, obj.getAddress()); // 주소
+//		pstmt.setString(6, obj.getNo()); 	  // 순번
 
 		int result = pstmt.executeUpdate();
 
@@ -186,7 +186,7 @@ public class C06Ex {
 //			Insert(new ChargeStation(201, "대구광역시", "대구지사", "대구가스", 10101, "대구"));
 			Select(); // 전체조회
 //			SelectOne();		// 단건조회
-			update(new ChargeStation(201, "울산광역시", "울산지사", "울산가스", 10101, "울산")); // 수정
+//			update(new ChargeStation(201, "울산광역시", "울산지사", "울산가스", 10101, "울산")); // 수정
 			Delete(); // 단건삭제
 
 		} catch (Exception e) {
