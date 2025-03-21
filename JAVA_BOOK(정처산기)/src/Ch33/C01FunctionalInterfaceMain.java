@@ -49,12 +49,11 @@ public class C01FunctionalInterfaceMain {
 		// 원시타입 int[] 받기 -> 내림차순 -> int를 Integer로 boxing -> List<Integer변환>
 		Func3 func3 = (items)->{
 			return Arrays.stream(items)
-				  .boxed()						// boxing 처리를 해야 sort가 나올때 차순변경을 할 수 있게해줌!!
-				  .sorted((a,b)->{return b-a;})
+				  .boxed()							// boxing 처리를 해야할 때 차순변경을 할 수 있게해줌!!
+				  .sorted((a,b)->{return b-a;})		// 꼭 내림차순 하기전에 boxed 먼저 처리하고 하기!
 				  .collect(Collectors.toList());
 			};
 			List<Integer> li = func3.createListDesc(10,100,24,1612,42,123,15,4,1);
-			System.out.println(li);
+			System.out.println(li);					
 	}
-
 }

@@ -1,20 +1,33 @@
 package Ch33;
 
+import java.util.Arrays;
+
 @FunctionalInterface
 interface Functional{
 	Integer execute(int...args);
 }
-class Calc{
+class Calc {
 	Functional sum;			// 합
 	Functional sub;			// 차
 	Functional mul;			// 곱
 	Functional div;			// 나누기
 	Calc(){
 		// Functional sum 에 대한 람다식 완성 할 것
-	void sum, System.out.println();
-		// Functional sum 에 대한 람다식 완성 할 
-		// Functional sum 에 대한 람다식 완성 할 것
-		// Functional sum 에 대한 람다식 완성 할 것
+//	sum = (args) -> {return Arrays.stream(args).reduce(0,(sum,el)->{return sum+el;});};
+	sum = (args) -> Arrays.stream(args).reduce(0,(sum,el)-> sum+el);					// 람다식 간편하게 
+	
+		// Functional sub 에 대한 람다식 완성 할 것				// return sub<el?el-sub:sub-el
+	sub = (args) -> {return Arrays.stream(args)
+								  .boxed()
+								  .sorted((a,b)->{return 0;})
+								  .reduce(0, (sub,el)->{return sub<el?el-sub:sub-el;});};
+		// Functional mul 에 대한 람다식 완성 할 것
+	mul = (args) -> {
+			return Arrays.stream(args)
+						 .reduce(1, (mul,el)->mul*el);
+			};
+		// Functional div 에 대한 람다식 완성 할 것
+//	div = (args) -> {return Arrays.stream(args).reduce(1, div);};
 		// 조건
 		// sum,sub,mul,div 각각에 람다&스트림함수를 적절히 이용해서 기능 구현을 합니다
 		// 모든 인자를 받을 수 있는 가변인자 처리로 구현합니다
