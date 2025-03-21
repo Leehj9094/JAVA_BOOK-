@@ -34,8 +34,8 @@ public class C03FunctionalInterfaceMain {
 		list.stream().reduce(0,(sum,el)->{return sum+el;});return -1;};
 	// 04
 	public static Function<List<Object>, Integer> func4=(list)->{
-		
 		// 1.Integer형만 필터링(instanceof)
+		
 		// 누적합 (reduce)
 		return -1;};
 	// 05
