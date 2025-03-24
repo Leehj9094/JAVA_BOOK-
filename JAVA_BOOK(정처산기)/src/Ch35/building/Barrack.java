@@ -6,45 +6,61 @@ import java.util.Map;
 import Ch35.unit.Marine;
 import Ch35.unit.Medic;
 
-public class Barrack extends Building{
+public class Barrack extends Building {
 
 	UnitGenerator marine;
 	UnitGenerator medic;
-	
+
 	// 속이 찬 다이아몬드
 //	public Barrack() {
 //		marine = new MarineGenerator();
 //		medic = new MedicGenerator();
 //	}
 	// 속이 빈 다이아몬드
-	Map<String,UnitGenerator> generator = new HashMap();
+	Map<String, UnitGenerator> generator = new HashMap();
+
 	void setGenerator(UnitGenerator gen, String type) {
 		generator.put(type, gen);
 	}
-	
-	
+
 	public Marine getMarine() {
+		if(!isDestroyed) {
 		UnitGenerator marinGen = generator.get("marine");
 		return (Marine) marinGen.gen();
+		}else {
+			System.out.println("건물이 파괴되었거나 지어지는 중입니다");
+			return null;
+		}
 	}
+
 	public Medic getMedic() {
+		if(!isDestroyed) {
 		UnitGenerator medicGen = generator.get("medic");
 		return (Medic) medicGen.gen();
+		}else {
+			System.out.println("건물이 파괴되었거나 지어지는 중입니다");
+			return null;
+		}
 	}
-	
+
 	@Override
 	void buildStructure() {
 		System.out.println("건물짓기 시작");
-		while(amor==100&&hp) {
-			amor++;
-			hp++;
-			sheld++;
+		while(amor<100||hp<100||sheld<100) {
+			try {
+				Thread.sleep(300);			
+				amor++;
+				hp++;
+				sheld++;
+			}catch(Ex)
+			
 		}
+		
+		setGenerator(new MarineGenerator(), "marine");
+		setGenerator(new MedicGenerator(), "medic");
 		//  건물 생성 처리
 		System.out.println("건물 완성");
 		
 	}
 
-	
-	
 }
