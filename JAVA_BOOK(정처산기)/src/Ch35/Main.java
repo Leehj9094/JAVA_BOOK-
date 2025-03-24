@@ -1,0 +1,66 @@
+package Ch35;
+
+import Ch35.gun.Pistol;
+import Ch35.gun.Rafle;
+import Ch35.unit.Marine;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Marine marine1 = new Marine();
+		marine1.setGun(new Pistol());
+		marine1.myGun.reload(100);
+		Medic1.type="medic1";
+		marine1.setTime("marine1");
+
+		Marine marine2 = new Marine();
+		marine2.setGun(new Rafle());
+		marine2.myGun.reload(100);
+
+		// medic -> m1
+		new Thread() {
+			public void run() {
+				while(true) {
+					medic1.Healing(marine1);try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}.start();
+		
+		// m1 -> m2 attack
+		new Thread() {
+			@Override
+			public void run() {
+				while (true) {
+					marine2.attact(marine1);
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		};
+
+		// m2 -> m1 attack
+		new Thread() {
+			@Override
+			public void run() {
+				while (true) {
+					marine1.attact(marine2);
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		};
+
+	}
+
+}
