@@ -1,5 +1,7 @@
 package Ch35;
 
+import Ch35.building.Barrack;
+
 public class Main2 {
 
 	public static void main(String[] args) {
@@ -8,7 +10,12 @@ public class Main2 {
 		Barrack barrack;
 		
 		// 건물 생성
-		new Thread() {}.start();
+		new Thread() {
+			
+			@Override
+			public 
+			barrack = new Barrack();
+		}.start();
 		
 	}
 	
