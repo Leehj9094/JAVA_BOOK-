@@ -28,6 +28,7 @@ public abstract class Building {
 		}
 		else {
 			hp=0;
+			amor=0;
 			isDestroyed=false;
 			System.out.println("건물이 붕괴되었습니다.");
 		}

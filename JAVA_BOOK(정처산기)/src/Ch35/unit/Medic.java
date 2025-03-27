@@ -8,7 +8,7 @@ public class Medic extends Unit {
 		hp=100;
 		amor=100;
 	}
-	void setType(String type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	public void Healing(Unit unit) {

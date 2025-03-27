@@ -2,9 +2,9 @@ package Ch35.gun;
 
 import Ch35.unit.Unit;
 
-public class Rafle extends Gun{
+public class Rifle extends Gun{
 
-	public Rafle(){
+	public Rifle(){
 		this.maxBullitCnt=100;
 		this.curBullitCnt=0;
 		this.power=30;

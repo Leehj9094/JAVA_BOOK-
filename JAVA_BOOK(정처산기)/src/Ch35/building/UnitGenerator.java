@@ -7,8 +7,6 @@ public class UnitGenerator {
 
 	Unit gen;
 
-	public Marine gen() {
-		return null;
 	}
-	
-}
+
+

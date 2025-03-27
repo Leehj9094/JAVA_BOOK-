@@ -26,7 +26,7 @@ public class Barrack extends Building {
 	public Marine getMarine() {
 		if(!isDestroyed) {
 		UnitGenerator marinGen = generator.get("marine");
-		return (Marine) marinGen.gen();
+		return marinGen!=null ? (Marine) marinGen.gen() null;
 		}else {
 			System.out.println("건물이 파괴되었거나 지어지는 중입니다");
 			return null;
@@ -36,7 +36,7 @@ public class Barrack extends Building {
 	public Medic getMedic() {
 		if(!isDestroyed) {
 		UnitGenerator medicGen = generator.get("medic");
-		return (Medic) medicGen.gen();
+		return medicGen!=null ? (Medic) medicGen.gen() : null;
 		}else {
 			System.out.println("건물이 파괴되었거나 지어지는 중입니다");
 			return null;
@@ -49,10 +49,12 @@ public class Barrack extends Building {
 		while(amor<100||hp<100||sheld<100) {
 			try {
 				Thread.sleep(300);			
-				amor++;
-				hp++;
-				sheld++;
-			}catch(Ex)
+				if(amor!=100)amor++;
+				if(hp!=100)hp++;
+				if(sheld!=100)sheld++;
+			}catch(InterruptedException e) {
+				e.printStackTrace();
+			}
 			
 		}
 		
