@@ -1,6 +1,7 @@
 package Ch36.Domain.Dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,7 +30,7 @@ public class BookDaoImpl extends Dao implements BookDao {
 
 //		Class.forName("com.mysql.cj.jdbc.Driver");
 //		conn = DriverManager.getConnection(url, id, pw); // 발생된 예외는 throws해야 함 절대 catch no
-//		connectionPool = ConnectionPool.getInstance();s
+//		connectionPool = ConnectionPool.getInstance();
 		System.out.println("BookDaoImpl DB Connection Success");
 	};
 	

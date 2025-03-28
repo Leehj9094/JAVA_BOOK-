@@ -9,11 +9,11 @@ public class FrontController {
 	
 	// 싱글톤
 	private static FrontController instance;
-	private FrontController() {
+	public FrontController() {
 		System.out.println("[FC] FrontController init...");
 		init();
 	}
-	public static FrontController getInstace() {
+	public static FrontController getInstance() {
 		if(instance==null)
 			instance = new FrontController();
 		return instance;
@@ -35,6 +35,7 @@ public class FrontController {
 		SubController controller = map.get(endPoint);				// 요청사항을 처리할 SubController
 		return controller.execute(params);
 	}
+	
 	
 	
 }

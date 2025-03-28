@@ -9,7 +9,7 @@ import Ch36.Controller.FrontController;
 
 class ControllerTests {
 
-	FrontController fc = FrontController.getInstace();
+	FrontController fc = FrontController.getInstance();
 	
 	@Test
 	void test() {

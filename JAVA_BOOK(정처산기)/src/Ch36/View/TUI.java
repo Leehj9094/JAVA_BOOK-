@@ -1,33 +1,25 @@
-package Ch37_MVC_Add_View_Socket_Thread.View.TUI;
+package Ch36.View;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 import Ch36.Controller.FrontController;
-import Ch36.Domain.Dto.BookDto;
 
 public class TUI {
 
-	private String sid; // SessionId
-	private String id; // UserId
+	private String userid; // UserId
+	private String username; // UserId
 	private String role;
 	private Scanner sc = new Scanner(System.in);
 
 	private FrontController controller;
 
 	TUI() throws Exception {
-		controller = new FrontController();
+		controller = FrontController.getInstance();
 	}
-	
-	
-	joinMenu
-	
-	System.out.println("USERNAME : ");
-	String name = sc.next();
-	Map<String,Object> params = new HashMap();
-	
 
 	public void MainMenu() {
 
@@ -35,7 +27,7 @@ public class TUI {
 			System.out.println("--------------------------");
 			System.out.println("MAIN");
 			System.out.println("--------------------------");
-			System.out.println("1 도서조회");
+			System.out.println("1 도서관리");
 			System.out.println("2 로그인");
 			System.out.println("3 회원가입");
 			System.out.println("4 종료");
@@ -43,11 +35,13 @@ public class TUI {
 			int num = sc.nextInt();
 			switch (num) {
 			case 1:
+				사서Menu();
 				break;
 			case 2:
 				loginMenu();
 				break;
 			case 3:
+				JoinMenu();
 				break;
 			case 4:
 				System.out.println("프로그램을 종료합니다.");
@@ -55,6 +49,32 @@ public class TUI {
 			}
 		}
 
+	}
+
+	public void JoinMenu() {
+		System.out.println("--------------------------");
+		System.out.println("회원정보 입력");
+		System.out.println("--------------------------");
+		System.out.print("USERID : ");
+		String id = sc.next();
+		System.out.print("USERNAME : ");
+		String name = sc.next();
+		System.out.print("PW : ");
+		String pw = sc.next();
+
+		// 요청처리
+		Map<String, Object> params = new HashMap();
+		params.put("endPoint", "/user");
+		params.put("serviceNo", "1");
+		params.put("userid", id);
+		params.put("username", name);
+		params.put("password", pw);
+
+		Map<String, Object> response = controller.execute(params);
+
+		for (String key : response.keySet())
+			System.out.println(key + " : " + response.get(key));
+		
 	}
 
 	public void loginMenu() {
@@ -66,25 +86,6 @@ public class TUI {
 		System.out.print("PW : ");
 		String pw = sc.next();
 
-		// 로그인 성공!!
-		Map<String, Object> param = new HashMap();
-		param.put("id", id);
-		param.put("pw", pw);
-
-		Map<String, Object> result = controller.execute("/member", 5, param);
-		String sid = (String) result.get("sid");
-		String role = (String) result.get("role");
-		if (sid != null) {
-			this.sid = sid;
-			this.id = id;
-			this.role = role;
-		}
-
-		// 임의 지울것
-		if (role.equals("ROLE_MEMBER"))
-			사서Menu();
-		else if (role.equals("ROLE_USER"))
-			회원Menu();
 	}
 
 	public void 사서Menu() {
@@ -103,52 +104,20 @@ public class TUI {
 			int num = sc.nextInt();
 			switch (num) {
 			case 1:
-				Map<String, Object> result = controller.execute("/book", 1, null);
-				List<BookDto> list = (List<BookDto>) result.get("result");
-				list.stream().forEach((dto) -> {
-					System.out.println(dto);
-				});
 
 				break;
 			case 2:
-				System.out.print("도서코드 도서명 출판사 ISBN 입력 : ");
-				int bookcode = sc.nextInt();
-				String bookname = sc.next();
-				String publisher = sc.next();
-				String isbn = sc.next();
-
-				Map<String, Object> param = new HashMap();
-				param.put("bookcode", bookcode);
-				param.put("bookname", bookname);
-				param.put("publisher", publisher);
-				param.put("isbn", isbn);
-				param.put("sid", sid);
-				Map<String, Object> result2 = controller.execute("/book", 2, param);
-				Boolean isInsert = (Boolean) result2.get("result");
-				if (isInsert == true)
-					System.out.println("[INFO] 도서 등록 완료!");
 
 				break;
 			case 3:
 				break;
 
 			case 7:
-				//대여하기
-				int req_bookcode=sc.nextInt();
-				String userid = sc.next();
-				Map<String,Object> lend_param=new HashMap();
-				lend_param.put("bookcode", req_bookcode);
-				lend_param.put("id", userid);
-				lend_param.put("sid",sid);
-				Map<String,Object> result7=controller.execute("/lend", 2, lend_param);
-				Boolean isLend=(Boolean)result7.get("result");
-				if(isLend) {
-					System.out.println("[INFO] 대여완료!");
-				}
+
 				break;
-			
+
 			case 10:
-				
+
 				// 로그아웃
 				return;
 			}
