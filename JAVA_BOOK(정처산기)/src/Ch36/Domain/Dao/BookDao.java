@@ -1,54 +1,23 @@
 package Ch36.Domain.Dao;
 
-public class BookDao {
+import java.sql.SQLException;
+import java.util.List;
 
-	private String bookCode;
-	private String bookName;
-	private String publisher;
-	private String isbn;
-	// 생성자
-	public BookDao(){}
-	public BookDao(String bookCode, String bookName, String publisher, String isbn) {
-		super();
-		this.bookCode = bookCode;
-		this.bookName = bookName;
-		this.publisher = publisher;
-		this.isbn = isbn;
-	}
-	// getter and setter
-	public String getBookCode() {
-		return bookCode;
-	}
-	public void setBookCode(String bookCode) {
-		this.bookCode = bookCode;
-	}
-	public String getBookName() {
-		return bookName;
-	}
-	public void setBookName(String bookName) {
-		this.bookName = bookName;
-	}
-	public String getPublisher() {
-		return publisher;
-	}
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
-	}
-	public String getIsbn() {
-		return isbn;
-	}
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-	// toString
-	@Override
-	public String toString() {
-		return "BookDao [bookCode=" + bookCode + ", bookName=" + bookName + ", isbn=" + isbn + "]";
-	}
-	
-	// 1. BookDaoImpl 생성
-	
-	// 2. BookDaoImpl insert 작업 TEST
-	// 3. table명 : tbl_book
-	
+import Ch36.Domain.Dto.BookDto;
+import Ch36.Domain.Dto.UserDto;
+
+public interface BookDao {
+
+	int insert(BookDto bookDto) throws Exception;
+
+	int update(UserDto userDto) throws SQLException;
+
+	int delete(UserDto userDto) throws SQLException;
+	//단건조회
+
+	UserDto select(UserDto userDto);
+	//다건조회
+
+	List<UserDto> selectAll();
+
 }

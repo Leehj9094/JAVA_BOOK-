@@ -1,11 +1,11 @@
 package Ch35.building;
 
-import Ch35.unit.Marine;
 import Ch35.unit.Unit;
 
-public class UnitGenerator {
+public interface UnitGenerator {
 
-	Unit gen;
+	Unit gen();
+
 
 	}
 

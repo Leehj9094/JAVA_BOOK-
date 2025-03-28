@@ -13,7 +13,7 @@ public class Main {
 		marine1.setGun(new Pistol());
 		marine1.myGun.reload(100);
 		Medic medic1 = new Medic();
-		Medic1.type="medic1";
+		medic1.type="medic1";
 		
 		medic1.setType("marine1");
 		

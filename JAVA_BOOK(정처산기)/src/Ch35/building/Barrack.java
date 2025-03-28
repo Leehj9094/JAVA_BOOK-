@@ -26,7 +26,7 @@ public class Barrack extends Building {
 	public Marine getMarine() {
 		if(!isDestroyed) {
 		UnitGenerator marinGen = generator.get("marine");
-		return marinGen!=null ? (Marine) marinGen.gen() null;
+		return marinGen!=null ? (Marine) marinGen.gen() : null;
 		}else {
 			System.out.println("건물이 파괴되었거나 지어지는 중입니다");
 			return null;
@@ -44,7 +44,7 @@ public class Barrack extends Building {
 	}
 
 	@Override
-	void buildStructure() {
+	public void buildStructure() {
 		System.out.println("건물짓기 시작");
 		while(amor<100||hp<100||sheld<100) {
 			try {
