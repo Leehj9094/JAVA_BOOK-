@@ -72,7 +72,7 @@ public class BookController implements Controller{
 				System.out.println("[INVALID] bookcode의 길이는 최대 8자이여야 합니다=)");
 				return false;
 			}
-			if(bookDto.getBookName()==null||bookDto.getBookName().length()>=255) {			
+			if(bookDto.getBookName()==null||bookDto.getBookName().length()>=25) {			
 				response.put("error","bookname의 길이는 최대 255자 이내여야 합니다");
 				System.out.println("[INVALID] bookname의 길이는 최대 255자 이내여야 합니다");
 				return false;
