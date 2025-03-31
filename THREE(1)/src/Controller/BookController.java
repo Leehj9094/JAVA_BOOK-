@@ -23,10 +23,10 @@ public class BookController implements Controller{
 	public Map<String, Object> execute(Map<String, Object> params){
 		System.out.println(" ");
 		
-		Integer serviceNo = (Integer) params.get("serviceno");
+		Integer serviceNo = (Integer) params.get("serviceNo");
 		if(serviceNo == null) {
 			response.put("status", false);
-			response.put("message", "유효하지 않은 서비스 요청입니다 =(");
+			response.put("message", "유효하지 않은 서비스 요청입니다");
 			return response;
 		}
 		switch(serviceNo) {
@@ -50,11 +50,11 @@ public class BookController implements Controller{
 			System.out.println("[SB] 도서조회 요청 확인");
 			
 			break;
-		case 3:
+		case 3:	// U 도서수정
 			System.out.println("[SB] 도서수정 요청 확인");
 			
 			break;
-		case 4:
+		case 4:	// D 도서삭제
 			System.out.println("[SB] 도서삭제 요청 확인");
 			
 			break;
@@ -72,9 +72,9 @@ public class BookController implements Controller{
 				System.out.println("[INVALID] bookcode의 길이는 최대 8자이여야 합니다=)");
 				return false;
 			}
-			if(bookDto.getBookName()==null||bookDto.getBookName().length()>=25) {			
-				response.put("error","bookname의 길이는 최대 255자 이내여야 합니다");
-				System.out.println("[INVALID] bookname의 길이는 최대 255자 이내여야 합니다");
+			if(bookDto.getBookName()==null||bookDto.getBookName().length()>=40) {			
+				response.put("error","bookname의 길이는 최대 40자 이내여야 합니다");
+				System.out.println("[INVALID] bookname의 길이는 최대 40자 이내여야 합니다");
 				return false;
 			}
 			return true;	

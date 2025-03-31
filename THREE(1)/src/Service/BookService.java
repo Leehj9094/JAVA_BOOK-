@@ -22,6 +22,11 @@ public class BookService {
 		return isntance;
 	}
 
+	public BookService(BookDAO bookDao) {
+		super();
+		this.bookDao = bookDao;
+	}
+
 	public boolean bookRegistration(BookDTO bookDto) throws Exception {
 
 		return bookDao.insert(bookDto) > 0;

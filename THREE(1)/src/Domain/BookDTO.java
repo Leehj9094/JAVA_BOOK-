@@ -7,14 +7,15 @@ public class BookDTO {
 	private String BookAuthor;
 	private String BookName;
 	private String Publisher;
-	
-	public BookDTO() {}
 
-	public BookDTO(String bookCode, String isbn, String bookauthor, String bookName, String publisher) {
+	public BookDTO() {
+	}
+
+	public BookDTO(String bookCode, String isbn, String bookAuthor, String bookName, String publisher) {
 		super();
-		this.BookCode = bookCode;
+		BookCode = bookCode;
 		Isbn = isbn;
-		BookAuthor = bookauthor;
+		BookAuthor = bookAuthor;
 		BookName = bookName;
 		Publisher = publisher;
 	}
@@ -24,7 +25,7 @@ public class BookDTO {
 	}
 
 	public void setBookCode(String bookCode) {
-		this.BookCode = bookCode;
+		BookCode = bookCode;
 	}
 
 	public String getIsbn() {
@@ -35,12 +36,12 @@ public class BookDTO {
 		Isbn = isbn;
 	}
 
-	public String getAuthor() {
+	public String getBookAuthor() {
 		return BookAuthor;
 	}
 
-	public void setAuthor(String author) {
-		BookAuthor = author;
+	public void setBookAuthor(String bookAuthor) {
+		BookAuthor = bookAuthor;
 	}
 
 	public String getBookName() {
@@ -61,9 +62,7 @@ public class BookDTO {
 
 	@Override
 	public String toString() {
-		return "BookDTO [BookCode=" + BookCode + ", Isbn=" + Isbn + ", BookAuthor=" + BookAuthor + ", BookName=" + BookName
-				+ ", Publisher=" + Publisher + "]";
+		return "BookDTO [BookCode=" + BookCode + ", Isbn=" + Isbn + ", BookAuthor=" + BookAuthor + ", BookName="
+				+ BookName + ", Publisher=" + Publisher + "]";
 	}
-	
-	
 }
