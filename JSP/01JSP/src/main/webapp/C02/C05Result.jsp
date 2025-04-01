@@ -16,7 +16,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color:<%=bgColor.equals("")?%>","width:<%=width.equals("")?%>","height:<%=height.equals("")%>">
 	
 	col1 : <%= col1 %>
 	<hr/>
