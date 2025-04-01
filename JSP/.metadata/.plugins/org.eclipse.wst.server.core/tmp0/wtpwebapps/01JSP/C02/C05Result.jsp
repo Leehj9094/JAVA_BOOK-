@@ -6,8 +6,8 @@
     String col2 = request.getParameter("col2");
     String col3 = request.getParameter("col3");
     String col4 = request.getParameter("col4");
-    
-    System.out.printf("%s %s %s %s\n",col1,col2,col3,col4);
+    String nav = request.getParameter("nav");
+    System.out.printf("%s %s %s %s %s\n",col1,col2,col3,col4,nav);
     %>
     
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body style=width>
+<body>
 	
 	col1 : <%= col1 %>
 	<hr/>
@@ -26,6 +26,7 @@
 	<hr/>
 	col4 : <%= col4 %>
 	<hr/>
+	nav : <%= nav %>
 
 </body>
 </html>

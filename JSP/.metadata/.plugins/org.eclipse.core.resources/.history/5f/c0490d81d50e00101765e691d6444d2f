@@ -26,7 +26,6 @@
 	<hr/>
 	col4 : <%= col4 %>
 	<hr/>
-	nav : <%= nav %>
 
 </body>
 </html>
