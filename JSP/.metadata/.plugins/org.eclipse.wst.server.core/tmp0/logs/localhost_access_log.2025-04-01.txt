@@ -110,3 +110,6 @@
 0:0:0:0:0:0:0:1 - - [01/Apr/2025:17:03:34 +0900] "GET /01JSP/C02/C05ReqNavStyle.html HTTP/1.1" 200 876
 0:0:0:0:0:0:0:1 - - [01/Apr/2025:17:04:18 +0900] "GET /01JSP/C02/C05Result.jsp?col1=djd&col2=dks&col3=dkskssk&col4=djdj&style=width%3A30px%2Cheight%3A100px%2Cbackground-color%3Ayellow%3B HTTP/1.1" 404 813
 0:0:0:0:0:0:0:1 - - [01/Apr/2025:17:10:10 +0900] "GET /01JSP/C02/C05ReqNavStyle.html HTTP/1.1" 200 876
+127.0.0.1 - - [01/Apr/2025:17:47:24 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [01/Apr/2025:17:47:24 +0900] "GET /01JSP/C02/C05ReqNavStyle.html HTTP/1.1" 200 884
+0:0:0:0:0:0:0:1 - - [01/Apr/2025:17:47:48 +0900] "GET /01JSP/C02/C05Result.jsp?col1=dl&col2=gys&col3=whd&col4=park&style=null HTTP/1.1" 200 246

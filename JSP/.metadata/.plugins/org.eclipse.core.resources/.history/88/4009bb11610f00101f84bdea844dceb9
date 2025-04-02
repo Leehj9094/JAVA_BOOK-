@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="top-header">TOP-HEADER영역</div>
+			<nav>NAV 영역</nav>
+		</header>
+		<main>
+			<section>SECTION 영역</section>
+		</main>
+		<footer>FOOTER 영역</footer>
+	</div>
+	
+</body>
+</html>

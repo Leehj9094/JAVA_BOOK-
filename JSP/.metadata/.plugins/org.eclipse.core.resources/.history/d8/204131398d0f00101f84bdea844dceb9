@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" errorPage="./errors.jsp" %>
+
+<!-- 속성/기능 추가 -->
+<%@page import="java.sql.*" %>
+<%!
+	// 속성 / 기능 추가가능
+	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String id = "System";
+	private String pw = "1234";
+	
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	private void getConnection() throws Exception{
+		Connection conn = DriverManager.getConnection(url, id, pw);
+	}
+	private int insert(UserDto userDto) throws Exception{
+		return -1;
+	}
+	
+%>
+
+<!-- Service 함수 -->
+<%
+	
+	
+	
+%>

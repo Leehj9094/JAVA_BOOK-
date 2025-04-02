@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-tabExtensions=jps,html, xml, xsl, xsd, css, php, tpl, less, styl, scss, sass, jade, haml, hbs, twig
+tabExtensions=jsp,html, xml, xsl, xsd, css, php, tpl, less, styl, scss, sass, jade, haml, hbs, twig
