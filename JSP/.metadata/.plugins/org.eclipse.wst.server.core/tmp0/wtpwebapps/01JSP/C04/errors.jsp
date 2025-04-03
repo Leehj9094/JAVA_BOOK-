@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Error PAGE...</h1>
+	<h1>JOIN ERROR PAGE...</h1>
+	<hr/>
 	<%=exception.getMessage() %>
 </body>
 </html>

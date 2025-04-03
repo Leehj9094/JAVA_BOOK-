@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		label{font-size : .8rem; background-color:darkbrown; color:white;}
+	</style>
+</head>
+<body>
+	<h1>JOIN FORN</h1>
+	
+</body>
+</html>
