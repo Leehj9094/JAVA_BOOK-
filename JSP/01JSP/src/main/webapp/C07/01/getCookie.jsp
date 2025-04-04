@@ -30,5 +30,6 @@
 <%-- 	<h1>쿠키 확인(EL)</h1>
 	COOKIE1's VALUE : ${cookie.myCookie1.value}<br/>
 	COOKIE2's VALUE : ${cookie.myCookie2.value}<br/> --%>
+	
 </body>
 </html>

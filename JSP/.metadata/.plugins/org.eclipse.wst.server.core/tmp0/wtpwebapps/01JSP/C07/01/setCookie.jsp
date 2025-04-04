@@ -17,6 +17,7 @@
      							
      	Cookie cookie2 = new Cookie("myCookie2","myCookie1Value");
      	cookie2.setMaxAge(60*5);	// 5분 설정
+     	cookie2.setPath("/");
      	
      	response.addCookie(cookie1);
      	response.addCookie(cookie2);
@@ -31,6 +32,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="./getCookie,jsp">쿠키확인하기</a>
+	<a href="./getCookie.jsp">쿠키확인하기</a>
 </body>
 </html>

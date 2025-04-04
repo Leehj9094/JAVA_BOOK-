@@ -1,0 +1,13 @@
+package C09;
+
+public class DBUtils {
+
+	private static DBUtils instance;
+	
+	private DBUtils() {}
+	public static DBUtils getInstance() {
+		if(instance==null)
+			instance = new DBUtils();
+		return instance;
+	}
+}

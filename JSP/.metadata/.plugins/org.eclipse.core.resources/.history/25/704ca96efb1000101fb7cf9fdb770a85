@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+	EL(Expression Language) : 내장객체의 Scope 참조
+	PageScope 				: 현재 JSP페이지 내에서만 사용 가능한 속성 / 기능 (관련 내장객체 : pageContext)
+	requestScope 			: 하나의 요청 처리동안 (관련 내장객체 : request)
+	sessionScope 			: 일정기간 동안(지정된 혹은 기본값) (관련 내장객체 : session)
+	applicationScope 		: 서버 종료 시 동안 (관련 내장 객체 application)
+	
+ -->
+
+
+
+<!-- EL : PARAM -->
+
+USERNAME : ${param.username } <br/>
+PASSWORD : ${param.password } <br/>
+
+</body>
+</html>

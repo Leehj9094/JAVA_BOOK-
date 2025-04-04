@@ -6,7 +6,7 @@ public class UserDto {
 	private String password;
 	private String role;
 	// 생성자
-	UserDto(){}
+	public UserDto(){}
 	public UserDto(String userid, String password, String role) {
 		super();
 		this.userid = userid;
