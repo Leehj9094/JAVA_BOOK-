@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@page import="C04.UserDto, C09.DBUtils, java.util.*"%>
+    pageEncoding="UTF-8"%>
+
+<%@page import="C04.UserDto,C09.DBUtils,java.util.*" %>
 <%
 	String userid = request.getParameter("userid");
 	String password = request.getParameter("password");
@@ -13,4 +14,14 @@
 	else
 		out.println("<script>alert('update 실패');location.href='history.go(-1)'</script>");
 	
-%>
+%>    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
