@@ -1,12 +1,9 @@
-
 package Utils;
 
 import java.sql.Connection;
-
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,5 +71,29 @@ public class DBUtils {
 		return list;
 	}
 
+	public List<VoteDto> selectAllVote() throws Exception{
+		String sql="select * from TBL_VOTE_202005";
+		
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		List<VoteDto> list = new ArrayList();
+		VoteDto dto = null;
+		if(rs!=null) {
+		
+			while(rs.next()) {
+				dto = new VoteDto();
+				dto.setV_jumin(rs.getString(1));
+				dto.setV_name(rs.getString(2));
+				dto.setM_no(rs.getString(3));
+				dto.setV_time(rs.getString(4));
+				dto.setV_area(rs.getString(5));
+				dto.setV_confirm(rs.getString(6));
+				list.add(dto);
+			}
+		}
+		pstmt.close();
+		rs.close();
+		return list;
+	}
 
 }
