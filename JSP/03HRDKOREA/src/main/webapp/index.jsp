@@ -14,7 +14,7 @@
 	a{text-decoration:none; color:black;}
 	.wrapper{}
 	.wrapper>header{height:80px;}
-	.wrapper>nav{height:50px;}
+	.wrapper>nav{height:35px;}
 	.wrapper>main{height:calc(100vh - 80px - 50px - 80px);}
 
 	.wrapper>footer{height:80px;}

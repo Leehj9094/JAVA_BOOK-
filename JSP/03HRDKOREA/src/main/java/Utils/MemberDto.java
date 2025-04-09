@@ -2,8 +2,8 @@ package Utils;
 
 public class MemberDto {
 
-	private String C_no;
-	private String C_name;
+	private String c_no;
+	private String c_name;
 	private String phone;
 	private String address;
 	private String grade;
@@ -12,24 +12,24 @@ public class MemberDto {
 	public MemberDto() {}
 	public MemberDto(String c_no, String c_name, String phone, String address, String grade) {
 		super();
-		C_no = c_no;
-		C_name = c_name;
+		this.c_no = c_no;
+		this.c_name = c_name;
 		this.phone = phone;
 		this.address = address;
 		this.grade = grade;
 	}
 	// getter und setter
 	public String getC_no() {
-		return C_no;
+		return c_no;
 	}
 	public void setC_no(String c_no) {
-		C_no = c_no;
+		this.c_no = c_no;
 	}
 	public String getC_name() {
-		return C_name;
+		return c_name;
 	}
 	public void setC_name(String c_name) {
-		C_name = c_name;
+		this.c_name = c_name;
 	}
 	public String getPhone() {
 		return phone;
@@ -52,7 +52,7 @@ public class MemberDto {
 	// toString
 	@Override
 	public String toString() {
-		return "MemberDto [C_no=" + C_no + ", C_name=" + C_name + ", phone=" + phone + ", address=" + address
+		return "MemberDto [C_no=" + c_no + ", C_name=" + c_name + ", phone=" + phone + ", address=" + address
 				+ ", grade=" + grade + "]";
 	}
 	

@@ -43,13 +43,37 @@ a {
 }
 
 .wrapper>nav {
-	height: 50px;
+	height: 35px;
 }
 
 .wrapper>main {
 	height: calc(100vh - 80px - 50px - 80px);
 }
-.wrapper>main{}
+.wrapper>main h2 {
+	text-align: center;
+	font-size: 1.8rem;
+	font-weight: 400;
+}
+
+.wrapper>main table {
+	border: 1px solid;
+	border-collapse: collapse;
+	min-width: 500px;
+	min-height: 350px;
+	margin: 0 auto;
+}
+
+.wrapper>main table th, .wrapper>main table td {
+	min-width: 80px !important;
+	min-height: 25px !important;
+	border: 1px solid;
+	text-align: center;
+}
+
+.wrapper>main table th {
+	background-color: lightgray;
+}
+
 
 .wrapper>footer {
 	height: 80px;
@@ -76,7 +100,7 @@ a {
 					<th>수강료</th>
 					<th>강사자격취득일</th>
 				</tr>
-				<%@page import="Utils.*,java.util.*,java.time.*,java.time.format.*"%>
+				<%@page import="Utils.*,java.util.*,java.time.*,java.time.format.*,java.text.DecimalFormat"%>
 				<%
 				List<TeacherDto> list = DBUtils.getInstance().selectAllTeacher();
 				%>
@@ -88,7 +112,11 @@ a {
 					<td><%=dto.getTeacher_code() %></td>
 					<td><%=dto.getTeacher_name() %></td>
 					<td><%=dto.getClass_name() %></td>
-					<td><%=dto.getClass_price() %></td>
+					<%
+						int price = dto.getClass_price();
+						DecimalFormat fmt = new DecimalFormat("#,###");
+					%>
+					<td><%="\\"+fmt.format(price) %></td>
 					<%
 						String date = dto.getTeacher_regist_date();
 						// INFMT
