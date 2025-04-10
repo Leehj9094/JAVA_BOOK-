@@ -9,3 +9,13 @@
 2025-04-07 09:07:07,234 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2025-04-08 12:06:27,795 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2025-04-09 08:37:14,802 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-04-10 08:30:04,713 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-04-10 12:41:02,143 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.16; built: 2024-12-09T21:02:54.535Z; git: c3f88bafb4e393f23204dc14dc57b042e84debc7; jvm 21.0.6+7-LTS
+2025-04-10 12:41:02,187 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@14e60da7{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@1be8f20f{STARTED}}
+2025-04-10 12:41:02,188 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2025-04-10 12:41:02,206 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@4ed36645{HTTP/1.1, (http/1.1)}{127.0.0.1:51604}
+2025-04-10 12:41:02,220 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@1978b2cf{STARTING}[12.0.16,sto=0] @15127322ms
+2025-04-10 12:41:02,881 [qtp1230119883-5153] INFO  o.e.j.e.nested.ContextHandler._help - Warning: No org.apache.tomcat.JarScanner set in ServletContext. Falling back to default JarScanner implementation.
+2025-04-10 12:41:03,155 [qtp1230119883-5153] INFO  o.e.j.e.nested.ContextHandler._help - Warning: No org.apache.tomcat.JarScanner set in ServletContext. Falling back to default JarScanner implementation.
+2025-04-10 17:43:40,687 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@1978b2cf{STOPPING}[12.0.16,sto=0]
+2025-04-10 17:43:40,689 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@4ed36645{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
