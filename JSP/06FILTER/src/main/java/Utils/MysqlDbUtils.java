@@ -6,27 +6,27 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class MysqlDbUtils {
-
-	private String url = "jdbc:mysql://localhost/bookDB";
+	
+	private String url = "jdbc:mysql://localhost/testDB";
 	private String id = "root";
 	private String pw = "1234";
 	
 	private Connection conn;
 	private PreparedStatement pstmt;
-	private ResultSet rs;
+	private ResultSet rs;	
 	
+	//싱글톤 
 	private static MysqlDbUtils instance;
-	private MysqlDbUtils() throws Exception{
+	private MysqlDbUtils() throws Exception {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		conn = DriverManager.getConnection(url, id, pw);
 	}
-	
-	public static MysqlDbUtils getInstance() throws Exception{
+	public static MysqlDbUtils getInstance() throws Exception {
 		if(instance==null)
 			instance = new MysqlDbUtils();
 		return instance;
 	}
-
+	
 	public int insert(UserDto userDto) throws Exception {
 		pstmt = conn.prepareStatement("insert into tbl_user values(?,?,?)");
 		pstmt.setString(1,userDto.getUsername());
@@ -50,7 +50,5 @@ public class MysqlDbUtils {
 		}
 		return userDto;
 	}
-	
-	
-	
+
 }
