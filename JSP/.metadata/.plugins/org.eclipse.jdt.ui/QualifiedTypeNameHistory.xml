@@ -8,4 +8,7 @@
     <fullyQualifiedTypeName name="javax.servlet.Filter"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
     <fullyQualifiedTypeName name="javax.naming.Context"/>
+    <fullyQualifiedTypeName name="Domain.Dto.UserDto"/>
+    <fullyQualifiedTypeName name="Domain.Dao.ConnectionPool.ConnectionPool"/>
+    <fullyQualifiedTypeName name="Domain.Service.UserServiceImpl"/>
 </qualifiedTypeNameHistroy>
