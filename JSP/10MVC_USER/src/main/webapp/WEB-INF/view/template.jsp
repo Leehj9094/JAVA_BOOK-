@@ -19,9 +19,11 @@
 			<%@include file="/resources/layouts/nav.jsp" %>
 		</header>
 		<main  class="layout">
-				<h1>HOME</h1>
+			<h1>TEMPLATE</h1>
+	
 		</main>
-
+		
+		
 		<!-- footer -->
 		<%@include file="/resources/layouts/footer.jsp" %>
 	</div>

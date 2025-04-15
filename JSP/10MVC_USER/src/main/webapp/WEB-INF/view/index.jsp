@@ -20,12 +20,16 @@
 		</header>
 		<main  class="layout">
 				<h1>HOME</h1>
+				
+				${message}
+				<%
+					session.removeAttribute("message");
+				%>
 		</main>
 
 		<!-- footer -->
 		<%@include file="/resources/layouts/footer.jsp" %>
 	</div>
-
 	
 </body>
 </html>

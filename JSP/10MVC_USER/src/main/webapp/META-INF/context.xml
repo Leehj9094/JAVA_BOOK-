@@ -21,7 +21,7 @@
    	<Resource name="jdbc/MysqlDB"
           auth="Container"
           type="javax.sql.XADataSource"
-          factory="Dao.ConnectionPool.MysqlXADataSourceFactory"
+          factory="Domain.Dao.ConnectionPool.MysqlXADataSourceFactory"
           url="jdbc:mysql://localhost:3306/testDB"
           user="root"
           password="1234"/>
