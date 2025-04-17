@@ -41,6 +41,7 @@ public class BookListController implements SubController  {
 				criteria = new Criteria();		// pageno=1, amount=10, type=null, keyword=null
 			}else {
 				
+				criteria = new Criteria(pageno,10,type,keyword);
 			}
 			
 			// Service
