@@ -6,6 +6,14 @@
 	<!-- link -->
 	<%@include file="/resources/layouts/link.jsp" %>
 	
+	<script>
+	const path = '${pageContext.request.contextPath}';
+	const bookCode = '${bookDto.bookCode}';
+	console.log("bookCode : ", bookCode);
+	
+	</script>
+	
+	
 	<!--  -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/book/read.css" />
 	<script src="${pageContext.request.contextPath}/resources/js/book/read.js" defer></script>
@@ -52,7 +60,7 @@
 			<div class="reply-block">
 				<div class="reply-header">
 					<div>
-						댓글수 : <span>00</span>
+						댓글수 : <span class="reply-cnt">0</span>
 					</div>
 					<hr>
 					<div>
@@ -61,11 +69,11 @@
 					</div>
 				</div>
 				<div class="reply-body">
-					<div class="tiems">
-						<div class="item">
+					<div class="items">
+						<!-- <div class="item">
 							<div class="left">
 								<div class="profile"></div>
-								<div>username</div>
+								<div class="username">username</div>
 							</div>
 							<div class="right">
 								<div class="date">2025-01-01</div>
@@ -74,7 +82,7 @@
 								</div>
 								<div class="button-group"></div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
